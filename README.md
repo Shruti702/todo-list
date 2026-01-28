@@ -4,7 +4,7 @@ A simple and responsive To-Do List application built with React and Vite. This p
 🚀 Features:
 Add Tasks: Quickly add new items to your list.
 Edit Tasks: Modify existing tasks if your plans change.
-Mark as Completed: Toggle the completion status of any task.
+Mark as Completed: Click directly on the "text of the task" to toggle a strike-through effect, indicating the task is completed.
 Delete Tasks: Remove tasks from the list when they are no longer needed.
 Persistent Styling: A user-friendly and visually appealing interface.
 
