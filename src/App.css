@@ -1,42 +1,104 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1b2e35;
+  --secondary-color: #4a6cdd;
+  --white-color: #fff;
+  --gray-color: #ffffffa1;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(13, 13, 109); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.TodoWrapper {
+  background: var(--primary-color); 
   padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border: 2px solid #849be7;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh; 
+  overflow-y: auto;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: var(--white-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid var(--secondary-color);
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: var(--white-color);
 }
 
-.card {
-  padding: 2em;
+.todo-input::placeholder {
+  color: var(--gray-color);
 }
 
-.read-the-docs {
-  color: #888;
+.todo-btn {
+  background: var(--secondary-color);
+  color: var(--white-color);
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.incompleted {
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.completed {
+  color: var(--gray-color);
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon, .delete-icon {
+  cursor: pointer;
+  margin-left: 10px;
 }
