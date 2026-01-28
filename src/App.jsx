@@ -8,6 +8,7 @@ import ToDoList from './components/ToDoList';
 function App() {
   const [todos, setTodos] = useState([]);
 
+  // Add Todo 
   const addTodo = (todo) => {
     setTodos([
       ...todos, 
@@ -15,10 +16,29 @@ function App() {
     ]);
   }
 
+  // Delete Todo 
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
 
+  // Toggle Complete Todo 
   const toggleComplete = (id) => {
     setTodos(
       todos.map((todo) => todo.id === id ? { ...todo, completed: !todo.completed } : todo)
+    );
+  }
+
+  // Toggle Edit Mode
+  const editTodo = (id) => {
+    setTodos(
+      todos.map((todo) => todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo)
+    );
+  }
+
+  // Edit Task Text 
+  const editTask = (task, id) => {
+    setTodos(
+      todos.map((todo) => todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo)
     );
   }
 
@@ -29,6 +49,9 @@ function App() {
         <ToDoForm addTodo={addTodo} />
         <ToDoList 
           todos={todos}
+          deleteTodo={deleteTodo}
+          editTodo={editTodo}
+          editTask={editTask}
           toggleComplete={toggleComplete}
         />
       </div>
